@@ -17,8 +17,8 @@ class TodoController extends Controller
     public function create() {
         Todo::create(
             [
-                'title' => 'Новая задача',
-                'description' => 'Описание задачи',
+                'title' => 'New task',
+                'description' => 'About task',
             ]
         );
         return redirect()->route('todo.index');
@@ -28,7 +28,7 @@ class TodoController extends Controller
         $todos = $todo->find($id);
 
         return view('todo', [
-            'value' => "$todos"
+            'value' => $todos
         ]);
     }
 
